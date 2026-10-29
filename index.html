@@ -12,6 +12,13 @@
 .brand{display:flex;align-items:center;gap:10px;padding:0 5px 18px;border-bottom:1px solid #ffffff20}.hanger{font-size:31px}.brand strong{display:block;font-size:21px;letter-spacing:1px}.brand small{color:#b7c8df;font-size:10px}
 .nav{display:grid;gap:7px}.nav button{background:transparent;color:#d9e5f5;border:0;text-align:left;padding:12px 13px;border-radius:10px;display:flex;gap:12px;align-items:center;font-size:14px}.nav button.active,.nav button:hover{background:#286ce1;color:white}.nav span{width:22px;text-align:center;font-size:17px}.side-note{margin-top:auto;border:1px solid #ffffff20;border-radius:14px;padding:16px;color:#d9e5f5;font-size:12px;line-height:1.6;background:#ffffff08}
 main{min-width:0;padding:24px 27px 18px}.topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;gap:12px}.eyebrow{font-size:11px;color:var(--blue);font-weight:800;letter-spacing:1.4px;text-transform:uppercase}.topbar h1{font-size:24px;margin:4px 0 0}.profile{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:700}.avatar{width:36px;height:36px;border-radius:50%;background:#dbeaff;display:grid;place-items:center;font-size:19px}
+  .profile-menu{position:relative}
+.admin-trigger{display:flex;align-items:center;gap:10px;background:transparent;border:0;color:var(--text);font-weight:700;padding:5px;border-radius:8px}
+.admin-trigger:hover{background:#eaf1fb}
+.admin-dropdown{display:none;position:absolute;right:0;top:calc(100% + 8px);width:180px;background:white;border:1px solid var(--line);border-radius:10px;box-shadow:0 8px 24px #10274720;padding:6px;z-index:20}
+.admin-dropdown.open{display:block}
+.admin-option{display:block;width:100%;padding:11px 12px;text-align:left;background:white;border:0;border-radius:7px;color:var(--text);font-size:13px}
+.admin-option:hover{background:#eef4fc}
 .hero{border-radius:17px;padding:26px 29px;color:white;background:linear-gradient(90deg,#102d4feF,#163b5bcc),linear-gradient(135deg,#234e6c,#647f8d);position:relative;overflow:hidden;min-height:160px;display:flex;align-items:center;margin-bottom:20px}.hero:after{content:"✂  ·  🧵  ·  ✦";position:absolute;right:25px;bottom:16px;font-size:28px;opacity:.18;letter-spacing:10px}.hero h2{font-size:30px;letter-spacing:1px;margin:8px 0}.hero p{margin:0;color:#d7e6f6;max-width:530px;line-height:1.5}.hero .eyebrow{color:#75d5ed}
 .metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:18px}.metric{padding:17px;border:1px solid var(--line);border-radius:13px;background:white;display:flex;gap:12px;align-items:center;box-shadow:0 3px 10px #10274705}.metric-icon{width:45px;height:45px;border-radius:13px;display:grid;place-items:center;font-size:22px}.metric:nth-child(1) .metric-icon{background:#e5f0ff;color:var(--blue)}.metric:nth-child(2) .metric-icon{background:#e1f7e9;color:var(--green)}.metric:nth-child(3) .metric-icon{background:#fff0dc;color:var(--orange)}.metric:nth-child(4) .metric-icon{background:#f0e8ff;color:var(--purple)}.metric small{display:block;color:var(--muted);font-size:12px}.metric strong{display:block;font-size:25px;margin-top:4px}
 .panel{background:white;border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:0 3px 10px #10274705;min-width:0}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:15px}.panel-head h3{font-size:15px;margin:0}.muted{color:var(--muted);font-size:12px}.analytics{display:grid;grid-template-columns:1.15fr 1fr;gap:15px;margin-bottom:18px}.bar-chart{height:155px;display:flex;align-items:end;gap:15px;padding:8px 6px 0;border-bottom:1px solid var(--line);background:repeating-linear-gradient(to top,transparent 0,transparent 37px,#edf2f8 38px,#edf2f8 39px)}.bar-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:end;height:100%;gap:7px;font-size:11px;color:var(--muted)}.bar{width:min(35px,80%);border-radius:5px 5px 0 0;background:linear-gradient(180deg,#63a4ff,#2878ed);min-height:5px}.status-wrap{display:flex;align-items:center;gap:25px;justify-content:center;min-height:150px}.donut{width:130px;height:130px;border-radius:50%;background:conic-gradient(var(--blue) 0 55%,var(--orange) 55% 75%,var(--green) 75% 95%,#dce5f1 95% 100%);display:grid;place-items:center;position:relative;flex-shrink:0}.donut:before{content:"";position:absolute;width:86px;height:86px;background:white;border-radius:50%}.donut div{position:relative;text-align:center;font-weight:800;font-size:23px}.donut small{display:block;font-size:10px;color:var(--muted);font-weight:500}.legend{display:grid;gap:12px;font-size:12px}.legend span{display:flex;align-items:center;gap:8px}.dot{width:9px;height:9px;border-radius:50%;display:inline-block}
@@ -40,7 +47,21 @@ footer{font-size:11px;color:#8a98aa;border-top:1px solid var(--line);padding:14p
   <div class="side-note"><div style="font-size:25px;margin-bottom:7px">🧵</div><strong>Better tracking.</strong><br>For a smoother production flow.<br><br><span style="color:#91b7e9">Plan · Stitch · Deliver</span></div>
 </aside>
 <main>
-  <div class="topbar"><div><div class="eyebrow">Production workspace</div><h1 id="pageHeading">Dashboard</h1></div><div class="profile"><div class="avatar">👤</div><span>Admin ▾</span></div></div>
+  <div class="topbar">
+  <div>
+    <div class="eyebrow">Production workspace</div>
+    <h1 id="pageHeading">Dashboard</h1>
+  </div>
+  <div class="profile-menu">
+    <button type="button" class="admin-trigger" id="adminMenuButton">
+      <span class="avatar">👤</span> Admin ▾
+    </button>
+    <div class="admin-dropdown" id="adminDropdown">
+      <button type="button" class="admin-option">Admin Profile</button>
+      <button type="button" class="admin-option">Settings</button>
+    </div>
+  </div>
+</div>
 
   <section class="dashboard active" id="page-dashboard">
     <div class="hero"><div><div class="eyebrow">Welcome to</div><h2>THREADLINE</h2><p>Garment Manufacturing Order and Production Batch Tracking</p></div></div>
@@ -123,6 +144,20 @@ function openModal(type){currentType=type;document.getElementById('modalTitle').
 function closeModal(){document.getElementById('modalBackdrop').classList.remove('open')}
 document.getElementById('modalBackdrop').addEventListener('click',e=>{if(e.target.id==='modalBackdrop')closeModal()});
 document.getElementById('dataForm').addEventListener('submit',e=>{e.preventDefault();const d=Object.fromEntries(new FormData(e.target).entries());if(currentType==='order'){orders.unshift({id:'ORD-'+String(Date.now()).slice(-5),customer:d.customer,product:d.product,qty:Number(d.qty),due:d.due,status:d.status})}else{const order=orders.find(o=>o.id===d.orderId);batches.unshift({id:'BCH-'+String(Date.now()).slice(-5),orderId:d.orderId,product:d.product||(order?order.product:'Garment'),qty:Number(d.qty),progress:Math.min(100,Number(d.progress)||0),status:d.status})}save();renderAll();closeModal();e.target.reset()});
+const adminButton = document.getElementById('adminMenuButton');
+const adminDropdown = document.getElementById('adminDropdown');
+
+adminButton.addEventListener('click', function (event) {
+  event.stopPropagation();
+  adminDropdown.classList.toggle('open');
+});
+
+document.addEventListener('click', function (event) {
+  if (!event.target.closest('.profile-menu')) {
+    adminDropdown.classList.remove('open');
+  }
+});
+
 renderChart();renderAll();
 </script>
 </body>
